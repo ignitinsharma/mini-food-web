@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini food app</title>
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      #navbar {
+        background-color: black;
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+      #navbar a {
+        margin-right: 30px;
+        color: aliceblue;
+        font-size: 25px;
+        text-decoration: none;
+      }
+      #container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        justify-content: center;
+      }
+
+      #mdiv {
+        padding: 2rem 2rem;
+        margin: auto;
+        box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+      }
+      #container div img {
+        width: 300px;
+        height: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <a id="cart" href="./index.html">Home</a>
+      <a id="cart" href="./cart.html">Cart</a>
+    </div>
+    <div id="container"></div>
+  </body>
+</html>
+<script src="./index.js" type="module"></script>
