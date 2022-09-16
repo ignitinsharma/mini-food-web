@@ -1,5 +1,5 @@
-import { data } from "./data.js";
-console.log(data);
+import {data} from "./data.js";
+import {navbar} from "./navbar.js"
 
 let con = document.getElementById("container");
 
@@ -36,8 +36,11 @@ display(data);
 
 let cartarr= JSON.parse(localStorage.getItem("cart")) || [];
 function addtocart(el){
-
     cartarr.push(el);
     localStorage.setItem("cart",JSON.stringify(cartarr))
 
 }
+
+
+let nav= document.getElementById('navbar')
+nav.innerHTML=navbar();

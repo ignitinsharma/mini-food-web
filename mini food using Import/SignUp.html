@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp</title>
+    <style>
+      #box{
+        margin: auto;
+        display: grid;
+        width: 30%;
+        height: 2rem;
+        gap: 20px;
+       
+
+      }
+
+      input{
+        padding: 0.5rem 1rem
+      }
+      
+      button{
+        padding: 0.5rem 1rem;
+        background-color: rgb(24, 21, 21);
+        color: aliceblue;
+      }
+
+    </style>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div id="box">
+      <input type="text" id="name" placeholder="Name" />
+      <input type="text" id="email" placeholder="email" />
+      <input type="password" id="password" placeholder="password" />
+      <input type="text" id="username" placeholder="username" />
+      <input type="text" id="mobile" placeholder="mobile" />
+      <input type="text" id="des" placeholder="description" />
+      <button id="submit">Register</button>
+    </div>
+  </body>
+</html>
+<script type="module">
+  import { navbar } from "./navbar.js";
+  let nav = document.getElementById("navbar");
+  nav.innerHTML = navbar();
+
+  let registerBtn = document.getElementById("submit");
+  registerBtn.addEventListener("click", function () {
+    Register();
+  });
+
+  let Register = async () => {
+    let register_data = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      password: document.getElementById("password").value,
+      username: document.getElementById("username").value,
+      mobile: document.getElementById("mobile").value,
+      description: document.getElementById("des").value,
+    };
+
+    try {
+      let res = await fetch(
+        `https://masai-api-mocker.herokuapp.com/auth/register`,
+        {
+          method: "POST",
+          body: JSON.stringify(register_data),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      let data = await res.json();
+
+      // if user got signup sucessfull then alert got excute
+      alert("Signup SuccessFul")
+    } catch (error) {
+      console.log(error);
+    }
+  };
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./navbar.css" />
+    <style>
+      input {
+        padding: 0.5rem 1rem;
+      }
+      button {
+        padding: 0.5rem 1rem;
+        background-color: rgb(24, 21, 21);
+        color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <input type="text" id="name" placeholder="Enter Name" />
+    <input type="text" id="address" placeholder="Enter Address" />
+    <button id="submit">Submit</button>
+  </body>
+</html>
+<script type="module">
+  import { navbar } from "./navbar.js";
+  let nav = document.getElementById("navbar");
+  nav.innerHTML = navbar();
+
+  // we are catching flag value from the login page and local stroage and cheching if user is login or not
+  // if user login so flag value if true if value is true it will show successful
+
+  let loginlc = JSON.parse(localStorage.getItem("login"));
+  console.log(loginlc);
+  let btn = document.getElementById("submit");
+  btn.addEventListener("click", checkout);
+
+  function checkout() {
+    if (loginlc == true) {
+      alert("checkout successfull");
+      loginlc = false;
+      localStorage.setItem("login", JSON.stringify(loginlc));
+    } else {
+      alert("Please login first");
+      location.href = "./login.html";
+    }
+  }
+</script>

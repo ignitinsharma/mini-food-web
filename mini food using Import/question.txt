@@ -1,0 +1,40 @@
+## Question statement 
+
+Create a mini food booking app. With the following functionalities.
+
+User will be able to signup and login.
+
+User will be able to see a list of food items (i.e. menu);
+
+User can add any number of food in his bucket.
+
+He can also remove any item from his bucket.
+
+On checkout page user will enter his details (i.e. name and address);
+
+He will be able to checkout only if he is logged in.
+
+Else he will be redirected to the login page.
+
+Create following pages :-
+Note:- Every page will have the same navbar with login, signup, home, cart and checkout link.
+
+Use Import Export (Mandatory);
+Index.html
+
+Show list of items, with add to cart button.
+Cart.html
+
+Show the items added by the user with a remove button.
+Checkout.html
+
+Accept the details from the user and alert him on successful checkout.
+The user should not be able to checkout if he is not logged in.
+SignUp.html
+
+Where user can register himself
+Login.html
+
+Where user will login
+Use :- (https://github.com/masai-school/api-mocker/wiki/Authentication-API) for login signup
+Note:- create a fake data (array of foods) in a separate file. Use import and export on this fake data.
